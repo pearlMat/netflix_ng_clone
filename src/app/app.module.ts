@@ -12,6 +12,7 @@ import { MovieService } from '../services/movies/movies.service';
 import { FavouritesComponent } from '../pages/favourites/favourites.component';
 
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { NotfoundComponent } from '../pages/notfound/notfound.component';
@@ -34,11 +35,12 @@ import { FIREBASE_CONFIG } from "./firebase.config";
     BrowserModule,
      FormsModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG ),
     AppRoutingModule
   ],
-  providers: [AuthenticationService, AngularFirestore,  MovieService],
+  providers: [AuthenticationService, AngularFirestoreModule, AngularFirestore,  MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
