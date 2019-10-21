@@ -7,7 +7,7 @@
     
 
   </div>
-  <div class="text-center py-4">
+  <div *ngIf="movie" class="text-center py-4">
     <h2>{{movie.title}}</h2>
   </div>
   <div class="row">
@@ -19,7 +19,7 @@
     </div>
   </div>
     </div>
-      <div class="col-sm-2 col-md-6" >
+      <div *ngIf="movie" class="col-sm-2 col-md-6" >
       <div >
         <p><span style="font-weight: bold;">Released:</span> {{movie.released}}</p>
      <p ><span style="font-weight: bold;">Genre:</span> {{movie.genre}}</p>
@@ -31,8 +31,8 @@
       </div>
 
        <div class="btn-group">
-      <a [routerLink]="['/movie', movie.id]" class="btn  btn-danger">Add to Favourites</a>
-     
+
+      <button type="button" class="btn btn-danger" (click) =" addToFavourites()">ADD TO FAVOURITES</button>
                 
                 </div>
     
